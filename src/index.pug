@@ -37,8 +37,12 @@ html(lang="en")
 
           .main__content
             .hero-info
-              .hero-info__desc Личный сайт
-              .hero-info__username Чепков Артем
+              .hero-info__desc
+                h2.hero__subtext Личный сайт
+                h2.hero__subtext веб разработчика
+              .hero-info__username
+                h1.hero__name Чепков
+                h1.hero__name Артем
 
 
           .main__buttons
@@ -73,6 +77,7 @@ html(lang="en")
                 .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво! 
 
         section.skills
+          +image('content/skills-hand.png', 'hands')
           .container
             .skills__title
               .skills__title-text Чем я могу быть Вам полезен

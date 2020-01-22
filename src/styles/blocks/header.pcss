@@ -7,19 +7,23 @@
   .logo{
       font-size: 36px;
       font-weight: 800;
+      color: $text;
   }
   .main__menu{
       margin: 0 40px;
       width: 100%;
   }
   .menu__items{
+    color: $subtext;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
   }
   .socials{
     display: flex;
+    fill: $subtext;
   }
-  .socials__item{
+  .socials__item:not(:first-child){
     margin-left: 40px;
 }
   .socials__icon{
