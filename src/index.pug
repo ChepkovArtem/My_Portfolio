@@ -14,6 +14,7 @@ html(lang="en")
         //+icon('link', 'link-class')
         //.icon-bg
 
+        .paralax
         section.main
           .container
             header.main__header
@@ -31,7 +32,7 @@ html(lang="en")
                 ul.socials
                   each item in icons
                     li.socials__item
-                      a.social__link
+                      a.socials__link
                         +icon(item, "socials__icon")
 
 
@@ -117,7 +118,7 @@ html(lang="en")
                       li.slider-thumbs__item
                         a.slider-thumbs__link
                           img.slider-thumbs__pic
-                      li.slider-thumbs__item
+                      li.slider-thumbs__item.active
                         a.slider-thumbs__link
                           img.slider-thumbs__pic
                   .slider__buttons
@@ -167,8 +168,12 @@ html(lang="en")
           .container.footer__container
             .footer__year 2020
             .footer__author
-              .footer__author-name Чепков Артем
-              .footer__author-desc Личный сайт веб разработчика
+              .footer__author-name 
+                h1.name Чепков
+                h1.name Артем
+              .footer__author-desc
+                h2.author-desc Личный сайт
+                h2.author-desc веб разработчика
             .footer__bar
               .footer__menu
                 .main__menu

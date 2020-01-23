@@ -9,24 +9,35 @@
       font-weight: 800;
       color: $text;
   }
-  .main__menu{
-      margin: 0 40px;
-      width: 100%;
-  }
   .menu__items{
     color: $subtext;
     font-size: 16px;
     display: flex;
-    justify-content: space-between;
+    
+    :not(:first-child){
+      margin-left: 2vw;
+    }
+    :hover{
+      color: $orange;
+    }
   }
+  .menu__link{
+    transition: 0.5s;
+  }
+
+
   .socials{
     display: flex;
     fill: $subtext;
+    :hover{
+      fill: $orange;
+    }
   }
   .socials__item:not(:first-child){
     margin-left: 40px;
 }
   .socials__icon{
+    transition: 0.7s;
     height: 20px;
     width: 20px;
   }
