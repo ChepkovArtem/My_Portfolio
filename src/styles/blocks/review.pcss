@@ -11,24 +11,40 @@
 .reviews__item{
     width: 40%;
 }
+.review__text{
+    font-weight: 600;
+    font-size: 16px;
+    color: $subtext;
+}
 .review__author{
     margin-top: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
 }
-.author__avatar{
-    height: 100px;
+.avatar-rev{
     width: 100px;
+    height: 100px;
+    overflow: hidden;
     border-radius: 50%;
-    border: 1px solid snow;
-    text-align: center;
 }
 .author__info{
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 .author__work{
     margin-top: 20px;
+}
+.author__name{
+    color: $text;
+    font-size: 18px;
+    font-weight: bold;
+}
+.author__work{
+    color: $subtext;
+    font-size: 16px;
+    font-weight: 600;
 }

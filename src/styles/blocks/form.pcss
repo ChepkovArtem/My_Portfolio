@@ -1,0 +1,101 @@
+.callback{
+  background: linear-gradient(90deg, rgba(35,36,38,0.9) 43%, rgba(35,36,38,0.7) 65%, rgba(35,36,38,0.5) 78%);
+}
+.form__title{
+    font-size: 36px;
+    font-weight: bold;
+    color: $text;
+    margin-bottom: 50px;
+}
+.form__row{
+    display: flex;
+  }
+  .send-form{
+    width: 60%;
+    padding: 100px 0;
+  }
+
+  .form__block{
+    border-bottom: 2px solid $subtext;
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+    &:not(:first-child){
+      margin-left: 50px;
+    }
+    & .form__input{
+      font-size: 18px;
+      color: $text;
+      border: none;
+      width: 100%;
+      outline: none;
+      background: none;
+      padding: 0 0 0 30px;
+      height: 50px;
+    }
+    & span:before{
+      content: attr(data-placeholder);
+      position: absolute;
+      left: 30px;
+      top: 2%;
+      font-size: 16px;
+      color: $subtext;
+      transition: 0.5s;
+      z-index: 100;
+    }
+    & span:after{
+      content: '';
+      top: 100%;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      position: absolute;
+      background: linear-gradient(145deg, #de7904,#ffbe54);
+      transition: 0.5s;
+    }
+    & .focus + span:after {
+      width: 100%;
+    }
+    & .focus + span:before {
+     top: -20px;
+     color: #de7904;
+    }
+    & .form__icon:before {
+      content: '';
+      background: plum;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 6px;
+      transition: 0.5s;
+     }
+     & .focus ~ .form__icon:before {
+      background: #de7904;
+      top: -16px;
+     }
+  }
+  .textarea .form__input{
+    overflow: auto;
+    resize: none;
+    margin-top: 15px;
+    height: 100px;
+  }
+  .send-btn{
+    width: 360px;
+    height: 80px;
+    cursor: pointer;
+    border: none;
+    color: $subtext;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background: linear-gradient(120deg, #de7904,#ffbe54, #de7904);
+    background-size: 200%;
+    outline: none;
+    &:hover{
+    background-position:right;
+    color: $text;
+    }
+  }
