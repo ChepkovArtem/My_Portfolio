@@ -6,13 +6,26 @@
     font-weight: bold;
     color: $text;
     margin-bottom: 50px;
+    @include tablets{
+      text-align: center;
+    }
 }
 .form__row{
     display: flex;
+    @include tablets{
+      justify-content: center;
+    }
+    @include phones{
+      flex-direction: column;
+      align-items: center;
+    }
   }
   .send-form{
     width: 60%;
     padding: 100px 0;
+    @include tablets{
+      width: 100%;
+    }
   }
 
   .form__block{
@@ -22,6 +35,9 @@
     width: 100%;
     &:not(:first-child){
       margin-left: 50px;
+      @include phones{
+        margin-left: 0px;
+      }
     }
     & .form__input{
       font-size: 18px;
@@ -89,6 +105,7 @@
     height: 100px;
   }
   .send-btn{
+    text-align: center;
     width: 360px;
     height: 80px;
     cursor: pointer;
@@ -104,5 +121,8 @@
     &:hover{
     background-position:right;
     color: $text;
+    }
+    @include phones{
+      width: 90%;
     }
   }

@@ -4,6 +4,7 @@
   "text": "#f3f5f9",
   "subtext": "#69665d",
   "links-color": "#4b6fd7",
+  "super-wide": "2800px",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",

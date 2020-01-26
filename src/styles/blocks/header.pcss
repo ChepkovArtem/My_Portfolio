@@ -2,13 +2,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5% 10% 0;
+    margin: 5% 5% 0;
+    @include phones{
+      margin: 5% 0 0;
+    }
   }
   .logo{
       font-size: 36px;
       font-weight: 800;
       color: $text;
   }
+  .main {
+    .main__menu{
+      @include tablets{
+        display: none;
+      }
+    }
+    .main__links{
+      @include phones{
+        display: none;
+      }
+    }
+  }
+
   .menu__items{
     color: $subtext;
     font-size: 16px;
@@ -24,7 +40,6 @@
   .menu__link{
     transition: 0.5s;
   }
-
 
   .socials{
     display: flex;
