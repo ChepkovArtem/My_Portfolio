@@ -14,70 +14,74 @@ html(lang="en")
         //+image('content/user.jpg', 'user-pic')
         //+icon('link', 'link-class')
         //.icon-bg
+        .welcome-section
+          section.parallax
+            - for (var i = 1; i <= 6; i++)
+              .parallax__layer
+                picture
+                  //source(srcset=require(`images/parallax/${i}_2560.${i === 1 ? 'jpg' : 'png'}`) media="(min-width: 1920px)").parallax__image
+                  img(srcset=require(`images/my-parallax/${i}.${i === 1 ? 'jpg' : 'png'}`)).parallax__image
+          section.main
+            .container
+              header.main__header
+                .main__logo
+                  .logo ЧА
+                .main__menu
+                  - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];
+                  nav.menu
+                    ul.menu__items
+                      each item in menu
+                        li.menu__item
+                          a.menu__link #{item}
+                .main__links
+                  - var icons =["insta","vk","github"];
+                  ul.socials
+                    each item in icons
+                      li.socials__item
+                        a.socials__link
+                          +icon(item, "socials__icon")
 
-        section.paralax
 
-        section.main
-          .container
-            header.main__header
-              .main__logo
-                .logo ЧА
-              .main__menu
-                - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];
-                nav.menu
-                  ul.menu__items
-                    each item in menu
-                      li.menu__item
-                        a.menu__link #{item}
-              .main__links
-                - var icons =["insta","vk","github"];
-                ul.socials
-                  each item in icons
-                    li.socials__item
-                      a.socials__link
-                        +icon(item, "socials__icon")
+            .main__content
+              .hero-info
+                .hero-info__desc
+                  h2.hero__subtext Личный сайт
+                  h2.hero__subtext веб разработчика
+                .hero-info__username
+                  h1.hero__name Чепков
+                  h1.hero__name Артем
 
+            .hero__downbutton
+              .scroll-down
+                a(href="").scroll-down__btn Скролл
+                
+          section.about
+            .container
+              .about__container
+                .about__left
+                  .user
+                    .user__avatar
+                      .avatar
+                        +image('content/user.jpg', 'user-pic', "user__avatar-img")
+                    .user__text
+                      -
+                        var rows = [
+                          ["Проживаю","Дубна"],
+                          ["Возраст","26 лет"],
+                          ["Родился","12 апреля 1993"]
+                        ];
+                      table.user__data
+                        table.user__data-table
+                          each row in rows
+                            tr.user__data-row
+                              each cell in row
+                                td #{cell}
 
-          .main__content
-            .hero-info
-              .hero-info__desc
-                h2.hero__subtext Личный сайт
-                h2.hero__subtext веб разработчика
-              .hero-info__username
-                h1.hero__name Чепков
-                h1.hero__name Артем
-
-          .hero__downbutton
-            .scroll-down
-              a(href="").scroll-down__btn Скролл
-              
-        section.about
-          .container
-            .about__container
-              .about__left
-                .user
-                  .user__avatar
-                    .avatar
-                      +image('content/user.jpg', 'user-pic', "user__avatar-img")
-                  .user__text
-                    -
-                      var rows = [
-                        ["Проживаю","Дубна"],
-                        ["Возраст","26 лет"],
-                        ["Родился","12 апреля 1993"]
-                      ];
-                    table.user__data
-                      table.user__data-table
-                        each row in rows
-                          tr.user__data-row
-                            each cell in row
-                              td #{cell}
-
-              .about__right
-                .about__welcome-text Привет, меня зовут
-                .about__username Чепков Артем
-                .about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные пректы.
-                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво! 
+                .about__right
+                  .about__welcome-text Привет, меня зовут
+                  .about__username Чепков Артем
+                  .about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные пректы.
+                  .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво! 
 
         .middle-section
           section.values
@@ -90,45 +94,11 @@ html(lang="en")
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .values__widget
                   #skills-component
-          //section.works
+          section.works
             .container.works__container
               .section-title.works__section-title Мои работы
               .works__content
                 #slider-component
-
-        section.works
-          .container
-            .works__title Мои Работы
-            .works__content
-              .slider
-                .slider__display
-                  img.slider__display-pic
-                  .slider__display-thumbs
-                    ul.slider-thumbs
-                      li.slider-thumbs__item
-                        a.slider-thumbs__link
-                          img.slider-thumbs__pic
-                      li.slider-thumbs__item
-                        a.slider-thumbs__link
-                          img.slider-thumbs__pic
-                      li.slider-thumbs__item.active
-                        a.slider-thumbs__link
-                          img.slider-thumbs__pic
-                  .slider__buttons
-                    a.diraction-btn.direction-btn--next >
-                    a.diraction-btn.direction-btn--prev <
-
-                .slider__info
-                  .slider__tags
-                    ul.tags
-                      li.tags__item Html
-                      li.tags__item Css
-                      li.tags__item JavaScript
-                  .slider__info-text
-                    h3.slider__info-title Какой-то сайт
-                    .slider__info-desc Описание какого-то сайта
-                  .slider__info-btns
-                    a.iconend-link Посмотреть сайт
 
         .callback__container
           section.reviews
