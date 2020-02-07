@@ -1,0 +1,62 @@
+.keyart {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  perspective: 100;
+  background-color: #1b1f22;
+  @include tablets{
+      display: none;
+  }
+}
+
+.keyart_layer {
+    width: 1920px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+}
+.keyart_layer.parallax {
+	position:absolute;
+	z-index: -1;
+}
+	#keyart-0 {
+        background-image: url('./../images/my-parallax/1.jpg');
+        top: 0;
+	}
+	#keyart-1 {
+        background-image: url('./../images/my-parallax/2.png');
+        top: 280px;
+	}
+	#keyart-2 {
+		background-image: url('./../images/my-parallax/3.png');
+        top: 450px;
+        z-index: 6;
+	}
+	#keyart-3 {
+		background-image: url('./../images/my-parallax/4.png');
+        top: 810px;
+	}
+	#keyart-4 {
+        background-image: url('./../images/my-parallax/5.png');
+        top: 61%;
+	}
+	#keyart-5 {
+        background-image: url('./../images/my-parallax/6.png');
+        top: 55%;
+    }
+    #keyart-6 {
+        background-image: url('./../images/my-parallax/6.png');
+        top: 65%;
+	}
+
+	#title_layer{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        z-index: 5;
+        top: 21%;
+	}

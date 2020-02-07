@@ -8,7 +8,12 @@
     min-width: 90%;
   }
 }
-
+.main__content{
+  display: none;
+  @include tablets{
+    display: block;
+  }
+}
 .hero-info{
   display: flex;
   justify-content: center;
