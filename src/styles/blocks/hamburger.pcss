@@ -9,10 +9,10 @@
       position: absolute;
       top: 4px;
       width: 100%;
-      height: 5px;
+      height: 4px;
       background: $subtext;
       z-index: 1;
-      box-shadow: 0 8.5px 0 $subtext;
+      box-shadow: 0 9px 0 $subtext;
       transition: 0.5s;
     }
     &:after{
@@ -20,7 +20,7 @@
       position: absolute;
       bottom: 4px;
       width: 100%;
-      height: 5px;
+      height: 4px;
       background:$subtext;
       z-index: 1;
       transition: 0.5s;
@@ -28,20 +28,15 @@
     @include tablets{
         display: block;
     }
-    /*header.active {
-        .toggle:before{
-        top: 14px;
-        transform: rotate(45deg);
-        box-shadow: 0 0 0 #fff;
-        }
-        .toggle:after{
-          bottom: 14px;
-          transform: rotate(-45deg);
-        }
-        .navigation{
-          transform: translateY(0);
-          opacity: 1;
-          top: 100%;
-        }
-      }*/
+    &.active{
+      &:before{
+      top: 14px;
+      transform: rotate(45deg);
+      box-shadow: 0 0 0;
+      }
+      &:after{
+        bottom: 12px;
+        transform: rotate(-45deg);
+      }
+    }
 }

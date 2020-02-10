@@ -51,6 +51,20 @@ html(lang="en")
                         a.socials__link
                           +icon(item, "socials__icon")
                 .hamburger
+            .fullscreen-menu
+              .fullscreen-menu__container
+                .fullscreen-menu__nav
+                  nav.menu
+                    ul.menu__items
+                      each item in menu
+                        li.menu__item
+                          a.menu__link #{item}
+                .fullscreen-menu__socials
+                  ul.socials
+                    each item in icons
+                      li.socials__item
+                        a.socials__link
+                          +icon(item, "socials__icon")
 
 
             .main__content
