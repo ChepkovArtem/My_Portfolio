@@ -7,6 +7,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
     title Portfolio | main page
   body
     .wrapper
@@ -31,18 +32,18 @@ html(lang="en")
                 .hero-info__username
                   h1.hero__name Чепков
                   h1.hero__name Артем
-          section.main
+          section.main#home
             .container
               header.main__header
                 .main__logo
                   .logo ЧА
                 .main__menu
-                  - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];
+                  - var menu = {"Главная" : "home", "Обо мне" : "about", "Навыки" : "skills", "Работы" : "works", "Отзывы" : "reviews", "Связаться" : "callback"};
                   nav.menu
                     ul.menu__items
-                      each item in menu
+                      each val, item in menu
                         li.menu__item
-                          a.menu__link #{item}
+                          a.menu__link(href='#' + val)  #{item}
                 .main__links
                   - var icons =["insta","vk","github"];
                   ul.socials
@@ -56,9 +57,9 @@ html(lang="en")
                 .fullscreen-menu__nav
                   nav.menu
                     ul.menu__items
-                      each item in menu
+                      each val, item in menu
                         li.menu__item
-                          a.menu__link #{item}
+                          a.menu__link(href='#' + val) #{item}
                 .fullscreen-menu__socials
                   ul.socials
                     each item in icons
@@ -78,9 +79,9 @@ html(lang="en")
 
             .hero__downbutton
               .scroll-down
-                a(href="").scroll-down__btn Скролл
+                a(href="#about").scroll-down__btn Скролл
                 
-          section.about
+          section.about#about
             .container
               .about__container
                 .about__left
@@ -109,7 +110,7 @@ html(lang="en")
                   .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво! 
 
         .middle-section
-          section.values
+          section.values#skills
             .container.values__container
               .values__wrapper
                 .values__title
@@ -119,14 +120,14 @@ html(lang="en")
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .values__widget
                   #skills-component
-          section.works
+          section.works#works
             .container.works__container
               .section-title.works__section-title Мои работы
               .works__content
                 #slider-component
 
         .callback__container
-          section.reviews
+          section.reviews#reviews
             .container
               .reviews__title
                 .reviews__name Что обо мне говорят
@@ -154,8 +155,36 @@ html(lang="en")
                       .author__info
                         .author__name Автор 2
                         .author__work Должность 2 
+                
+                
+                .reviews-testslider
+                  .reviews__widget
+                    #reviews-component
+                  ul.main-carousel
+                    li.carousel-cell
+                      .review__text Что-то похвальное от первого автора
+                      .review__author.author
+                        .author__avatar
+                          .avatar-rev
+                            +image('content/user.jpg', 'user-pic', "user__avatar-img")
+                        .author__info
+                          .author__name Автор 1
+                          .author__work Должность 1
+                    li.carousel-cell
+                      .review__text Что-то похвальное от второго автора
+                      .review__author.author
+                        .author__avatar
+                          .avatar-rev
+                            +image('content/user.jpg', 'user-pic', "user__avatar-img")
+                        .author__info
+                          .author__name Автор 2
+                          .author__work Должность 2 
+                    li.carousel-cell 3
+                    li.carousel-cell 4
+                    li.carousel-cell 5
+                    li.carousel-cell 6
 
-          section.callback
+          section.callback#callback
             .container
               form.send-form
                 h1.form__title Связаться со мной
@@ -188,9 +217,9 @@ html(lang="en")
               .footer__data
                 nav.menu.menu--color-white.footer__data-menu
                   ul.menu__items
-                    each item in menu
+                    each val, item in menu
                       li.menu__item
-                        a.menu__link #{item}
+                        a.menu__link(href='#' + val)  #{item}
                 .footer__data-content
                   .footer__data-col
                     .footer__data-text

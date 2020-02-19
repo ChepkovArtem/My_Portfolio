@@ -1,0 +1,24 @@
+script(type="text/x-template")#review-container
+    ul.reviews-component
+        li.review-component(v-for="review in reviews")
+            .review__text-component
+                review(:review="review")
+            .author-container-component
+                authorPic(:review="review")
+                authorInfo(:review="review")
+
+script(type="text/x-template")#review-comp
+    p.review__qoute-component {{review.text}}
+
+
+
+script(type="text/x-template")#author-pic
+    .review__author-component
+        .author__avatar-component
+            .avatar-component
+                img(:src="review.photo" alt="").user-pic
+
+script(type="text/x-template")#author-info            
+    .author__info-component
+        .author__name-component {{review.authorname}}
+        .author__occ-component {{review.authorocc}}
