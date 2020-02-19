@@ -9,4 +9,4 @@ import "./scripts/works";
 import "./scripts/parallax";
 import "./scripts/hamburger";
 import "./scripts/flick";
-import "./scripts/reviews";
+import "./scripts/reviews-slider";

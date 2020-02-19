@@ -8,12 +8,12 @@ const review = {
 const authorPic = {
     template: "#author-pic",
     props: ["review"]
-}
+};
 
 const authorInfo = {
     template: "#author-info",
     props: ["review"]
-}
+};
 
 new Vue({
     el: "#reviews-component",

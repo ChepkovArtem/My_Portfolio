@@ -1,0 +1,26 @@
+script(type="text/x-template")#flickity-slider-test
+    .containerFlickity
+        flicSlider(ref='flickity' :options="flickityOptions")
+            li.review-component(v-for="review in reviews")
+                    .review__text-component
+                        review(:review="review")
+                    .author-container-component
+                        authorPic(:review="review")
+                        authorInfo(:review="review")
+        .custom-buttons-block                
+            .custom-button.flickity__prev--button(@click="previous()")
+            .custom-button.flickity__next--button(@click="next()")
+script(type="text/x-template")#review-comp
+    p.review__qoute-component {{review.text}}
+
+
+
+script(type="text/x-template")#author-pic
+    .review__author-component
+        .avatar-component.avatar
+            img(:src="review.authorpic" alt="").user-pic
+
+script(type="text/x-template")#author-info            
+    .author__info-component
+        .author__name-component {{review.authorname}}
+        .author__occ-component {{review.authorocc}}

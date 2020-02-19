@@ -131,58 +131,11 @@ html(lang="en")
             .container
               .reviews__title
                 .reviews__name Что обо мне говорят
-                .reviews__nav
-                  .reviews__navigation.reviews__nav-prev <
-                  .reviews__navigation.reviews__nav-next >
-
               .reviews__content
-                ul.reviews__list
-                  li.reviews__item.review
-                    .review__text Что-то похвальное от первого автора
-                    .review__author.author
-                      .author__avatar
-                        .avatar-rev
-                          +image('content/user.jpg', 'user-pic', "user__avatar-img")
-                      .author__info
-                        .author__name Автор 1
-                        .author__work Должность 1
-                  li.reviews__item.review
-                    .review__text Что-то похвальное от второго автора
-                    .review__author.author
-                      .author__avatar
-                        .avatar-rev
-                          +image('content/user.jpg', 'user-pic', "user__avatar-img")
-                      .author__info
-                        .author__name Автор 2
-                        .author__work Должность 2 
-                
-                
                 .reviews-testslider
                   .reviews__widget
-                    #reviews-component
-                  ul.main-carousel
-                    li.carousel-cell
-                      .review__text Что-то похвальное от первого автора
-                      .review__author.author
-                        .author__avatar
-                          .avatar-rev
-                            +image('content/user.jpg', 'user-pic', "user__avatar-img")
-                        .author__info
-                          .author__name Автор 1
-                          .author__work Должность 1
-                    li.carousel-cell
-                      .review__text Что-то похвальное от второго автора
-                      .review__author.author
-                        .author__avatar
-                          .avatar-rev
-                            +image('content/user.jpg', 'user-pic', "user__avatar-img")
-                        .author__info
-                          .author__name Автор 2
-                          .author__work Должность 2 
-                    li.carousel-cell 3
-                    li.carousel-cell 4
-                    li.carousel-cell 5
-                    li.carousel-cell 6
+                    //#reviews-component
+                    #flickity-slider
 
           section.callback#callback
             .container
